@@ -22,9 +22,9 @@
     
     <link
       rel="icon"
-      href="{% static 'assets/img/favicon-32.png'%}"
+      href="{{ companyinfo.favicon.url}}"
       sizes="32x32"
-      type="image/png"
+      type="image/ico"
     />
     
 
@@ -47,6 +47,8 @@
     <meta name="twitter:image" content="" />
 
     <!-- Custom css -->
+   <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0" nonce="Ny90mDP8"></script>
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
   </head>
 
@@ -65,10 +67,10 @@
               <a class="navbar-brand" href="/">
                 <picture class="colored">
                   <source
-                    srcset="{% static 'assets/img/Logo.png' %}"
+                    srcset="{{companyinfo.logo.url}}"
                     type="image/png"
                   />
-                  <img src="{% static 'assets/img/Logo.png' %}" alt="Logo" />
+                  <img src="{{companyinfo.logo.url}}" alt="Multisewa Logo" />
                 </picture>
               </a>
             </div>
@@ -82,14 +84,14 @@
                   
                   <!--  END: dropdown menu  -->
                  
-                  {% comment %} <li>
-                    <a href="portfolio.html">Portfolio</a>
-                  </li> {% endcomment %}
+                  <li>
+                    <a href="{% url 'blogs' %}">All Blogs</a>
+                  </li> 
                   
                 </ul>
               </div>
               <div class="cta">
-                <a href="#" class="btn--medium--round--border">Go to website</a>
+                <a href="#" class="btn--medium--round--border">Go to Multisewa Marketplace</a>
               </div>
               <div class="menu-button" data-visible="lg">
                 <div class="icons">
@@ -140,17 +142,13 @@
                   <img
                     data-unveil
                     src="#"
-                    data-src="assets/img/Logo.png"
-                    data-src-retina="assets/img/Logo@2x.png"
-                    alt=""
+                    data-src="{{companyinfo.logo.url}}"
+                    data-src-retina="{{companyinfo.logo.url}}"
+                    alt="{{ companyinfo.email}}"
                   />
                 </div>
                 <p>
-                  Series A financing infographic seed round. Long tail iteration
-                  advisor facebook founders gen-z agile development low hanging
-                  fruit network effects beta. Freemium first mover advantage
-                  angel investor influencer product management niche market
-                  monetization.
+                  {{companyinfo.short_description}}
                 </p>
               </div>
             </div>
@@ -160,11 +158,9 @@
                   <div class="list-element--text">
                     <h6>Pages</h6>
                     <ul>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="contact.html">Contact</a></li>
-                      <li><a href="about.html">About us</a></li>
-                      <li><a href="blog.html">Blog</a></li>
-                      <li><a href="plans.html">Prices</a></li>
+                      <li><a href="https://multisewa.com/" target="_blank">Visit Marketplace</a></li>
+                      <li><a href="{% url 'blogs'%}">Blogs</a></li>
+                      
                     </ul>
                   </div>
                 </div>
@@ -172,26 +168,29 @@
                   <div class="info-footer">
                     <h6>Contact</h6>
                     <p>
-                      2005 Stokes Isle Apt. 896,<br />
-                      Venaville 10010, USA<br />
-                      info@yourdomain.com <br />
-                      (+68) 120034509
+                      {{companyinfo.address}}<br />
+                      
+                      {{ companyinfo.email }} <br />
+                      (+977) {{companyinfo.phone}}
                     </p>
                     <div class="social-element--small">
                       <ul>
-                        <li>
-                          <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li>
-                          <a href="#"><i class="far fa-envelope"></i></a>
-                        </li>
-                      </ul>
+                                            {% if companyinfo.facebook_link %}
+                                            <li><a href="{{ companyinfo.facebook_link}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                            {% endif %}
+
+                                            {% if companyinfo.linkedin_link %}
+                                            <li><a href="{{ companyinfo.linkedin_link}}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                            {% endif %}
+
+                                            {% if companyinfo.twitter_link %}
+                                            <li><a href="{{ companyinfo.twitter_link}}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                            {% endif %}
+
+                                            {% if companyinfo.instagram_link %}
+                                            <li><a href="{{ companyinfo.instagram_link}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                            {% endif %}
+                                        </ul>
                     </div>
                   </div>
                 </div>
@@ -206,19 +205,19 @@
                 <div class="link">
                   <div class="list-element--text--inline">
                     <ul>
-                      <li><a href="privacy.html">privacy policy</a></li>
-                      <li><a href="privacy.html">cookie policy</a></li>
+                      {% comment %} <li><a href="privacy.html">privacy policy</a></li>
+                      <li><a href="privacy.html">cookie policy</a></li> {% endcomment %}
                     </ul>
                   </div>
                 </div>
                 <div class="text">
                   <p>
-                    © 2023 Multisewa Pvt. Ltd - All rights reserved.
+                    © {% now 'Y'%} Multisewa Pvt. Ltd - All rights reserved.
                     <a
                       href="http://multisewa.com/"
                       class="simple"
                       target="_blank"
-                      >Multisewa</a
+                      >{{ companyinfo.footer_text_copyright }}</a
                     >
                   </p>
                 </div>

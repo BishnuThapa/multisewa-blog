@@ -8,6 +8,8 @@ django = "*"
 pillow = "*"
 mysqlclient = "*"
 django-ckeditor = "*"
+django-social-share = "*"
+django-jazzmin = "*"
 
 [dev-packages]
 

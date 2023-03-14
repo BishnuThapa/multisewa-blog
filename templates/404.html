@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!--  class: image, round, hfixedlg, hfixedmd, hfixedsm  -->
+    <!--  Page Header  -->
+    <div class="page-header" data-padding>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="sectiontitle-element--center">
+                        <h1 class="big">Page not found</h1>
+                        <p>
+                            Oopss. That page doesn�t exist
+                        </p>
+                        <a href="{% url 'index' %}" class="btn--big--round">Return Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  END Page Header  -->
+{% endblock content %}

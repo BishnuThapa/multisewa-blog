@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+    <!--  Page Header  -->
+    <!--  class: image, round, hfixedlg, hfixedmd, hfixedsm  -->
+    <div class="page-header" data-padding>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <div class="sectiontitle-element--center">
+                        <h1 data-aos="fade-up" class="big">Blog</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  END Page Header  -->
+    <!--  Page Content  -->
+    <div class="page-content">
+        <section data-padding="bottom"
+                 data-isotope="fitRows"
+                 data-isotope-columns="three">
+            <div class="container">
+                <div class="row">
+                    <!--  Single Article  -->
+                    {% for blogpost in blog %}
+                        <article class="rectangle-element--article--wide">
+                            <div class="info">
+                                <div class="image">
+                                    <img data-unveil
+                                         src="#"
+                                         data-src="{{ blogpost.featured_image.url }}"
+                                         data-src-retina="{{ blogpost.featured_image.url }}"
+                                         alt="">
+                                </div>
+                                <div class="text">
+                                    <div class="meta--image">
+                                        <div class="tags">
+                                            <time class="e-date" datetime="2020-07-05T07:55:21+02:00">{{ blogpost.created_at }}</time>
+                                        </div>
+                                    </div>
+                                    <h3>{{ blogpost.title }}</h3>
+                                    <p>
+                                        {{ blogpost.description | safe | truncatewords:40 }}
+                                    </p>
+                                    <a href="post.html" class="simple--underline">Read more..</a>
+                                </div>
+                            </div>
+                            <a href="{% url 'blog-detail' blogpost.slug %}" class="link"></a>
+                        </article>
+                        <!--  END Single Article  -->
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!--  Pagination  -->
+        <!--  Pagination  -->
+        <section data-padding="bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="navigation-element--pagination--compressed">
+                            {% if blog.has_other_pages %}
+                                <div class="navigation">
+                                    {% if blog.has_previous %}
+                                        <div class="wrapper">
+                                            <a href="?page={{ blog.previous_page_number }}"
+                                               class="btn--big--nav--round">
+                                                <i class="feather icon-arrow-left"></i>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                    {% for i in blog.paginator.page_range %}
+                                        {% if blog.number == i %}
+                                            <div class="wrapper--numbers--round">
+                                                <a class="active">{{i}}</a>
+                                            </div>
+                                        {% else %}
+                                            <div class="wrapper--numbers--round">
+                                                <a href="?page={{i}}" class="">{{i }}</a>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if blog.has_next %}
+                                        <div class="wrapper">
+                                            <a href="?page={{ blog.next_page_number }}" class="btn--big--nav--round">
+                                                <i class="feather icon-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  END Pagination  -->
+        <!--  END Pagination  -->
+    </div>
+    <!--  END Page Content  -->
+{% endblock content %}

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "05766c2a32a6d22a78fe588f32eac0ee87c6ed0e17009705f1026cd02649ef36"
+            "sha256": "61f55eeb97d80b5f888bb0f3f998b76fc763b8c03f4edc23793ac5aa4833d0d2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -40,6 +40,14 @@
             "index": "pypi",
             "version": "==6.5.1"
         },
+        "django-jazzmin": {
+            "hashes": [
+                "sha256:5bb07055cf19183030724f976904fd8b6337559727959340a43832fab0531812",
+                "sha256:fb554c2d564649c65243b13385121fdbdda58521f49544f9d7cb9c414a4908d4"
+            ],
+            "index": "pypi",
+            "version": "==2.6.0"
+        },
         "django-js-asset": {
             "hashes": [
                 "sha256:86f9f300d682537ddaf0487dc2ab356581b8f50c069bdba91d334a46e449f923",
@@ -47,6 +55,14 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==2.0.0"
+        },
+        "django-social-share": {
+            "hashes": [
+                "sha256:13d0a1fbb2a90e3a6e7eb556315ececd1e93a906574a3284affbe2f43e2f7398",
+                "sha256:37844f3b4f88a2008604ece7eaedd52fd5914f111f13525200ce1101b750757f"
+            ],
+            "index": "pypi",
+            "version": "==2.3.0"
         },
         "mysqlclient": {
             "hashes": [

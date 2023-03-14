@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load social_share %}
 {% block content %}
     <!--  Page Header  -->
     <!--  class: image, round, hfixedlg, hfixedmd, hfixedsm  -->
@@ -51,6 +52,10 @@
                                 {{ single_blog.description | safe }}
                             </p>
                         </div>
+                        <div class="fb-comments"
+                             data-href="http://127.0.0.1:8000/blog/single_blog.id/"
+                             data-width=""
+                             data-numposts="5"></div>
                     </div>
                 </div>
             </div>
@@ -65,16 +70,16 @@
                             <div class="title">Share this article</div>
                             <ul>
                                 <li>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    {% post_to_facebook object_or_url '<i class="fab fa-facebook-f"></i>' %}
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    {% post_to_twitter "Multisewa Blog: {{ object.title }}. Check it out!" object_or_url '<i class="fab fa-twitter"></i>' %}
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    {% post_to_telegram "Multisewa Blog: {{ detail.title }}. Check it out!" object_or_url '<i class="fab fa-telegram"></i>' %}
                                 </li>
                                 <li>
-                                    <a href="#"><i class="far fa-envelope"></i></a>
+                                    {% post_to_whatsapp object_or_url '<i class="fab fa-whatsapp"></i>' %}
                                 </li>
                             </ul>
                         </div>

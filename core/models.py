@@ -54,5 +54,5 @@ class CompanyInfo(models.Model):
         return self.email
 
     class Meta:
-        verbose_name = 'Company Information'
-        verbose_name_plural = 'Company Information'
+        verbose_name = 'General Info'
+        verbose_name_plural = 'General Setting'

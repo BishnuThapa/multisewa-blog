@@ -10273,7 +10273,7 @@ header {
           -o-transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) max-height;
           transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) max-height; }
       header nav.main-navigation #logo[class*="height-lg"] a.navbar-brand img, header nav.top-navigation #logo[class*="height-lg"] a.navbar-brand img {
-        max-height: 50px; }
+        max-height: 80px; }
         @media screen and (max-width: 576px) {
           header nav.main-navigation #logo[class*="height-lg"] a.navbar-brand img, header nav.top-navigation #logo[class*="height-lg"] a.navbar-brand img {
             max-height: 40px; } }

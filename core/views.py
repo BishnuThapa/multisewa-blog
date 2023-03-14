@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Blog
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 # Create your views here.
 
 
@@ -25,3 +26,19 @@ def blog_detail(request, blog_slug):
         'blogs': blogs,
     }
     return render(request, 'blog-detail.html', context)
+
+
+def blogs(request):
+    blog = Blog.objects.all().order_by('-id')
+    paginator = Paginator(blog, 9)
+    page = request.GET.get('page')
+    paged_blog = paginator.get_page(page)
+    context = {
+        # 'blog': blog
+        'blog': paged_blog
+    }
+    return render(request, 'blogs.html', context)
+
+
+def error_404(request, exception):
+    return render(request, 'core/404.html')
