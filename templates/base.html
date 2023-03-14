@@ -9,13 +9,13 @@
       content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no"
     />
 
-    <title>Blog | Multisewa Pvt. Ltd. 🤟</title>
+    <title>{% block title %} Blog | Multisewa Pvt. Ltd. 🤟 {% endblock %}</title>
 
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="theme-color" content="#000" />
 
-    <meta name="description" content="" />
+    <meta name="{{companyinfo.meta_keyword }}" content="{{ companyinfo.meta_description}}" />
     <meta name="author" content="Patrick David" />
 
     <!-- Favicons -->

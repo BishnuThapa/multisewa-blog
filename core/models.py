@@ -32,7 +32,7 @@ class CompanyInfo(models.Model):
     logo = models.ImageField(
         upload_to='images', default='', blank=True, null=True)
     short_description = models.TextField(max_length=255, blank=True, null=True)
-    location_map = models.TextField(null=True, blank=True)
+    # location_map = models.TextField(null=True, blank=True)
     footer_text_copyright = models.CharField(
         max_length=100, null=True, blank=True, default='')
     footer_copyright_url = models.URLField(
