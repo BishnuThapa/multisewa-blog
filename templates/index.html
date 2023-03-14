@@ -13,127 +13,97 @@
                             <div class="image">
                                 <img data-unveil
                                      src="#"
-                                     data-src="{% static 'assets/img/post-1.jpg' %}"
-                                     data-src-retina="{% static 'assets/img/post-1@2x.jpg' %}"
+                                     data-src="{{ featured.featured_image.url }}"
+                                     data-src-retina="{{ featured.featured_image.url }}"
                                      alt=""/>
                             </div>
                             <div class="text">
                                 <div class="meta--image">
-                                    <div class="author--round">
-                                        <img data-unveil
-                                             src="#"
-                                             data-src="assets/img/author-1.jpg"
-                                             data-src-retina="assets/img/author-1@2x.jpg"
-                                             alt=""/>
-                                    </div>
                                     <div class="tags">
-                                    <time class="e-date" datetime="2020-07-05T07:55:21+02:00">5 Luglio 2020</time
-                                    >
-                                    <ul class="categories">
-                                        <li>
-                                            <a href="#">Category</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">News</a>
-                                        </li>
-                                    </ul>
+                                        <time class="e-date" datetime="2020-07-05T07:55:21+02:00"><mark>{{ featured.created_at }}</mark></time
+                                        >
+                                    </div>
                                 </div>
+                                <h3>{{ featured.title }}</h3>
+                                <p>
+                                    {{ featured.description | safe |truncatewords:50 }}
+                                </p>
+                                <a href="{% url 'blog-detail' featured.slug %}"
+                                   class="simple--underline">Continue reading..</a>
                             </div>
-                            <h3>User experience business-to-business pitch</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Ut enim ad�
-                            </p>
-                            <a href="post.html" class="simple--underline">Read all</a>
                         </div>
-                    </div>
-                    <a href="post.html" class="link"></a>
-                </article>
-                <!--  END Article Featured  -->
+                        <a href="{% url 'blog-detail' featured.slug %}" class="link"></a>
+                    </article>
+                    <!--  END Article Featured  -->
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!--  END Page Header  -->
-<!--  Page Content  -->
-<div class="page-content">
-    <section data-padding="bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="sectiontitle-element--inline align-items-md-end"
-                         data-padding="none">
-                        <div class="wrapper">
-                            <h2>New Blog Posts</h2>
-                        </div>
-                        <div class="wrapper articles-wrap">
-                            <div class="navigation-element--border--round--light" data-padding="none">
-                                <div class="navigation justify-content-md-end">
-                                    <div class="nav--prev">
-                                        <i class="feather icon-arrow-left"></i>
-                                    </div>
-                                    <div class="nav--next">
-                                        <i class="feather icon-arrow-right"></i>
+    <!--  END Page Header  -->
+    <!--  Page Content  -->
+    <div class="page-content">
+        <section data-padding="bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="sectiontitle-element--inline align-items-md-end"
+                             data-padding="none">
+                            <div class="wrapper">
+                                <h2>New Blog Posts</h2>
+                            </div>
+                            <div class="wrapper articles-wrap">
+                                <div class="navigation-element--border--round--light" data-padding="none">
+                                    <div class="navigation justify-content-md-end">
+                                        <div class="nav--prev">
+                                            <i class="feather icon-arrow-left"></i>
+                                        </div>
+                                        <div class="nav--next">
+                                            <i class="feather icon-arrow-right"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row" data-padding="xs">
-                <div class="col-12">
-                    <div class="articles-carousel owl-carousel">
-                        <!--  Single Article  -->
-                        <article class="rectangle-element--article--wide">
-                            <div class="info">
-                                <div class="image">
-                                    <img data-unveil
-                                         src="#"
-                                         data-src="{% static 'assets/img/post-2.jpg' %}"
-                                         data-src-retina="{% static 'assets/img/post-1@2x.jpg' %}"
-                                         alt=""/>
-                                </div>
-                                <div class="text">
-                                    <div class="meta--image">
-                                        <div class="author--round">
+                <div class="row" data-padding="xs">
+                    <div class="col-12">
+                        <div class="articles-carousel owl-carousel">
+                            <!--  Single Article  -->
+                            {% for blog in blogs %}
+                                <article class="rectangle-element--article--wide">
+                                    <div class="info">
+                                        <div class="image">
                                             <img data-unveil
                                                  src="#"
-                                                 data-src="assets/img/author-2.jpg"
-                                                 data-src-retina="assets/img/author-2@2x.jpg"
+                                                 data-src="{{ blog.featured_image.url }}"
+                                                 data-src-retina="{{ blog.featured_image.url }}"
                                                  alt=""/>
                                         </div>
-                                        <div class="tags">
-                                        <time class="e-date" datetime="2020-07-05T07:55:21+02:00">5 Luglio 2020</time
-                                        >
-                                        <ul class="categories">
-                                            <li>
-                                                <a href="#">Category</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">News</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                        <div class="text">
+                                            <div class="meta--image">
+                                                <div class="tags">
+                                                <time class="e-date" datetime="2020-07-05T07:55:21+02:00">{{ blog.created_at }}</time
+                                                >
+                                            </div>
+                                        </div>
+                                        <h3>{{ blog.title }}</h3>
+                                        <p>
+                                            {{ blog.description | safe | truncatewords:40 }}
+                                        </p>
+                                    <a href="post.html" class="simple--underline">Read more..</a
+                                    >
                                 </div>
-                                <h3>Channels business model canvas network effects market</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad�
-                                </p>
-                            <a href="post.html" class="simple--underline">Read all</a
-                            >
-                        </div>
-                    </div>
-                    <a href="post.html" class="link"></a>
-                </article>
-                <!--  END Single Article  -->
+                                {% comment %} </div> {% endcomment %}
+                            </div>
+                            <a href="{% url 'blog-detail' blog.slug %}" class="link"></a>
+                        </article>
+                    {% endfor %}
+                    <!--  END Single Article  -->
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 </div>
 <!--  END Page Content  -->
@@ -166,50 +136,35 @@
                 <div class="col-12">
                     <div class="articles-carousel owl-carousel">
                         <!--  Single Article  -->
-                        <article class="rectangle-element--article--wide">
-                            <div class="info">
-                                <div class="image">
-                                    <img data-unveil
-                                         src="#"
-                                         data-src="{% static 'assets/img/post-2.jpg' %}"
-                                         data-src-retina="{% static 'assets/img/post-1@2x.jpg' %}"
-                                         alt=""/>
-                                </div>
-                                <div class="text">
-                                    <div class="meta--image">
-                                        <div class="author--round">
-                                            <img data-unveil
-                                                 src="#"
-                                                 data-src="assets/img/author-2.jpg"
-                                                 data-src-retina="assets/img/author-2@2x.jpg"
-                                                 alt=""/>
-                                        </div>
-                                        <div class="tags">
-                                        <time class="e-date" datetime="2020-07-05T07:55:21+02:00">5 Luglio 2020</time
-                                        >
-                                        <ul class="categories">
-                                            <li>
-                                                <a href="#">Category</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">News</a>
-                                            </li>
-                                        </ul>
+                        {% for featuredblogs in featured_blogs %}
+                            <article class="rectangle-element--article--wide">
+                                <div class="info">
+                                    <div class="image">
+                                        <img data-unveil
+                                             src="#"
+                                             data-src="{{ featuredblogs.featured_image.url }}"
+                                             data-src-retina="{{ featuredblogs.featured_image.url }}"
+                                             alt=""/>
                                     </div>
-                                </div>
-                                <h3>Channels business model canvas network effects market</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit, sed do eiusmod tempor incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad�
-                                </p>
-                            <a href="post.html" class="simple--underline">Read all</a
-                            >
+                                    <div class="text">
+                                        <div class="meta--image">
+                                            <div class="tags">
+                                            <time class="e-date" datetime="2020-07-05T07:55:21+02:00">{{ featuredblogs.created_at }}</time
+                                            >
+                                        </div>
+                                    </div>
+                                    <h3>{{ featuredblogs.title }}</h3>
+                                    <p>
+                                        {{ featuredblogs.description | safe | truncatewords:40 }}
+                                    </p>
+                                <a href="post.html" class="simple--underline">Read more..</a
+                                >
+                            </div>
                         </div>
-                    </div>
-                    <a href="{% url 'blog-detail' %}" class="link"></a>
-                </article>
-                <!--  END Single Article  -->
+                        <a href="{% url 'blog-detail' featuredblogs.slug %}" class="link"></a>
+                    </article>
+                    <!--  END Single Article  -->
+                {% endfor %}
             </div>
         </div>
     </div>
