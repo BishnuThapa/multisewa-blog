@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime import date
 # Create your models here.
 
 
@@ -10,7 +10,7 @@ class Blog(models.Model):
     description = models.TextField()
     readtime = models.CharField(
         max_length=10, help_text='eg: 5 min', null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateField(default=date.today)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
