@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!--  Page Header  -->
+    <!--  class: image, round, hfixedlg, hfixedmd, hfixedsm  -->
+    <div class="page-header" data-padding="top">
+        <div class="container">
+            <div class="row" data-padding="smbottom">
+                <div class="col-12">
+                    <div class="sectiontitle-element--center">
+                        <span data-aos="fade-up" class="toptitle">Branding</span>
+                        <h1 data-aos="fade-up" data-aos-delay="100" class="big">What's trending in the tech industries?</h1>
+                        <p data-aos="fade-up" data-aos-delay="200">
+                            Jessica Simpson
+                        </p>
+                        <time data-aos="fade-up"
+                              data-aos-delay="400"
+                              class="e-date"
+                              datetime="2020-07-05T07:55:21+02:00">5 Luglio 2020</time>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  END Page Header  -->
+    <!--  Page Content  -->
+    <div class="page-content">
+        <!--  Main Img  -->
+        <section data-padding="bottom">
+            <div class="container">
+                <div data-aos="zoom-in" data-aos-duration="1000" class="row">
+                    <div class="col-12">
+                        <div class="wrapimage-element">
+                            <img data-unveil
+                                 src="#"
+                                 data-src="{% static 'assets/img/project-header.jpg'%}"
+                                 data-src-retina="{% static 'assets/img/project-header@2x.jpg'%}"
+                                 alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  END Main Img  -->
+        <!--  Text  -->
+        <section data-padding="bottom">
+            <div class="container">
+                <div data-aos="fade-up" class="row">
+                    <div class="col-12 col-lg-8 offset-lg-2">
+                        <div class="sectiontitle-element--full">
+                            <h2>Intro to article</h2>
+                            <p>
+                                Hackathon handshake pivot crowdsource first mover advantage partnership. Prototype accelerator infographic backing ownership strategy focus user experience branding. Infographic metrics angel investor founders series A
+                                financing value proposition buyer growth hacking. Paradigm shift android beta crowdfunding rockstar marketing metrics supply chain network effects iPad niche market venture. Release monetization termsheet hypotheses
+                                facebook user experience technology. Market product management hackathon. Validation launch party business plan user experience handshake stealth venture analytics direct mailing alpha facebook focus bandwidth marketing.
+                                Scrum project value proposition venture monetization crowdsource. Scrum project monetization buyer hackathon deployment equity freemium value proposition research & development business-to-business infrastructure marketing.
+                                Facebook niche market bootstrapping non-disclosure agreement focus direct mailing funding disruptive mass market.
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  END Text  -->
+        <!--  Share Section  -->
+        <section data-padding="xsbottom">
+            <div class="container">
+                <div data-aos="fade" class="row">
+                    <div class="col-12 col-lg-8 offset-lg-2">
+                        <div class="social-element--round">
+                            <div class="title">Share this article</div>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="far fa-envelope"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  END Share Section  -->
+       
+        
+        
+        <!--  Articles  -->
+        <section data-padding data-bg="grey">
+            <div class="container">
+                <div data-aos="fade" class="row">
+                    <div class="col-12">
+                        <div class="sectiontitle-element--center">
+                            <h2>
+                                Similar Articles
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-padding="xstop">
+                    <!--  Single Article  -->
+                    <div data-aos="fade" data-aos-delay="100" class="col-12 col-md-4">
+                        <article class="rectangle-element--article--wide">
+                            <div class="info">
+                                <div class="image">
+                                    <img data-unveil
+                                         src="#"
+                                         data-src="{% static 'assets/img/post-1.jpg'%}"
+                                         data-src-retina="{% static 'assets/img/post-1@2x.jpg'%}"
+                                         alt="">
+                                </div>
+                                <div class="text">
+                                    <div class="meta--image">
+                                        <div class="author--round">
+                                            <img data-unveil
+                                                 src="#"
+                                                 data-src="assets/img/author-1.jpg"
+                                                 data-src-retina="assets/img/author-1@2x.jpg"
+                                                 alt="">
+                                        </div>
+                                        <div class="tags">
+                                            <time class="e-date" datetime="2020-07-05T07:55:21+02:00">5 Luglio 2020</time>
+                                            <ul class="categories">
+                                                <li>
+                                                    <a href="#">Category</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">News</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h3>
+                                        User experience business-to-business pitch
+                                    </h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad�
+                                    </p>
+                                    <a href="post.html" class="simple--underline">Read all</a>
+                                </div>
+                            </div>
+                            <a href="post.html" class="link"></a>
+                        </article>
+                    </div>
+                    <!--  END Single Article  -->
+                    
+                </div>
+            </div>
+        </section>
+        <!--  END Articles  -->
+    </div>
+    <!--  END Page Content  -->
+{% endblock %}

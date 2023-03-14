@@ -5,3 +5,7 @@ from .models import Blog
 
 def index(request):
     return render(request, 'index.html')
+
+
+def blog_detail(request):
+    return render(request, 'blog-detail.html')

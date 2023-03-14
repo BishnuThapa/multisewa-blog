@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Blog | Multisewa Pvt. Ltd. 🤟</title>
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="theme-color" content="#000" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="Patrick David" />
+
+    <!-- Favicons -->
+    
+    <link
+      rel="icon"
+      href="{% static 'assets/img/favicon-32.png'%}"
+      sizes="32x32"
+      type="image/png"
+    />
+    
+
+    <!-- Canonical -->
+    <link rel="canonical" href="/" />
+
+    <!-- Open Graph -->
+    <meta property="og:image" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+  </head>
+
+  <body>
+    <!--  Main Wrap  -->
+    <div id="main-wrap">
+      <!--  Header & Menu  -->
+      <!--  class: fixed, bg, white, transparent  -->
+      <header id="header">
+        <!--  padding-sm, padding-md, padding-lg  -->
+        <div class="wrap-header--padding-lg">
+          <nav class="main-navigation">
+            <!--  Header Logo  -->
+            <!--  class: height-sm, height-md, height-lg  -->
+            <div id="logo" class="height-lg">
+              <a class="navbar-brand" href="/">
+                <picture class="colored">
+                  <source
+                    srcset="{% static 'assets/img/Logo.png' %}"
+                    type="image/png"
+                  />
+                  <img src="{% static 'assets/img/Logo.png' %}" alt="Logo" />
+                </picture>
+              </a>
+            </div>
+            <!--  END Header Logo  -->
+            <!--  Menu  -->
+            <div id="main-menu" aria-expanded="false" role="navigation">
+              <div class="menu-holder" data-hidden="lg">
+                <ul>
+                  <!--  dropdown menu  -->
+                  <!--  class: shadow, round, icon, bgitems  -->
+                  
+                  <!--  END: dropdown menu  -->
+                 
+                  {% comment %} <li>
+                    <a href="portfolio.html">Portfolio</a>
+                  </li> {% endcomment %}
+                  
+                </ul>
+              </div>
+              <div class="cta">
+                <a href="#" class="btn--medium--round--border">Go to website</a>
+              </div>
+              <div class="menu-button" data-visible="lg">
+                <div class="icons">
+                  <span class="bar bar-1"></span>
+                  <span class="bar bar-2"></span>
+                  <span class="bar bar-3"></span>
+                </div>
+              </div>
+            </div>
+            <div
+              id="mobile-menu"
+              data-visible="lg"
+              aria-expanded="false"
+              role="navigation"
+            >
+              <!-- class: -bg -->
+              <div class="mobile-wrap">
+                <!-- class: -dotted, -border -->
+                <div class="main-links--border col-12">
+                  <ul>
+                    
+                    {% comment %} <li>
+                      <a href="portfolio.html">Portfolio</a>
+                    </li> {% endcomment %}
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--  END Menu  -->
+          </nav>
+        </div>
+      </header>
+      <!--  END Header & Menu  -->
+
+      {% block content %}
+
+      {% endblock %}
+
+       <!--  Footer  -->
+      <footer data-aos="fade" id="footer" data-bg="white">
+        <div class="container">
+          <div class="row main-wrapper">
+            <div class="col-12 col-md-4">
+              <div class="logo-footer">
+                <!-- -small, -medium, -big -->
+                <div class="image--small">
+                  <img
+                    data-unveil
+                    src="#"
+                    data-src="assets/img/Logo.png"
+                    data-src-retina="assets/img/Logo@2x.png"
+                    alt=""
+                  />
+                </div>
+                <p>
+                  Series A financing infographic seed round. Long tail iteration
+                  advisor facebook founders gen-z agile development low hanging
+                  fruit network effects beta. Freemium first mover advantage
+                  angel investor influencer product management niche market
+                  monetization.
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 offset-md-2">
+              <div class="row">
+                <div class="col-6 col-md-6">
+                  <div class="list-element--text">
+                    <h6>Pages</h6>
+                    <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="about.html">About us</a></li>
+                      <li><a href="blog.html">Blog</a></li>
+                      <li><a href="plans.html">Prices</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-6 col-md-6">
+                  <div class="info-footer">
+                    <h6>Contact</h6>
+                    <p>
+                      2005 Stokes Isle Apt. 896,<br />
+                      Venaville 10010, USA<br />
+                      info@yourdomain.com <br />
+                      (+68) 120034509
+                    </p>
+                    <div class="social-element--small">
+                      <ul>
+                        <li>
+                          <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href="#"><i class="far fa-envelope"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 down border">
+              <div
+                class="wrapper justify-content-md-between align-items-md-center"
+              >
+                <div class="link">
+                  <div class="list-element--text--inline">
+                    <ul>
+                      <li><a href="privacy.html">privacy policy</a></li>
+                      <li><a href="privacy.html">cookie policy</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="text">
+                  <p>
+                    © 2023 Multisewa Pvt. Ltd - All rights reserved.
+                    <a
+                      href="http://multisewa.com/"
+                      class="simple"
+                      target="_blank"
+                      >Multisewa</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--  END Footer  -->
+    </div>
+    <!--  Main Wrap  -->
+    <!--  Scripts  -->
+    <script src="{% static 'assets/js/jquery.min.js' %} "></script>
+    <script src="{% static 'assets/js/jquery.unveil.js' %}"></script>
+    <script src="{% static 'assets/js/aos.js' %}"></script>
+    <script src="{% static 'assets/js/swiper.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.min.js' %}"></script>
+    <script src="{% static 'assets/js/carousel.js' %}"></script>
+    <script src="{% static 'assets/js/menu.js' %}"></script>
+    <script src="{% static 'assets/js/elements.js' %}"></script>
+    <script src="{% static 'assets/js/masonry.js' %}"></script>
+    <script src="{% static 'assets/js/form.js' %}"></script>
+    <!--  END Scripts  -->
+  </body>
+</html>
