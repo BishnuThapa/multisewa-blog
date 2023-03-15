@@ -51,7 +51,7 @@
                             <div class="wrapper">
                                 <h2>New Blog Posts</h2>
                             </div>
-                            <div class="wrapper articles-wrap">
+                            {% comment %} <div class="wrapper articles-wrap">
                                 <div class="navigation-element--border--round--light" data-padding="none">
                                     <div class="navigation justify-content-md-end">
                                         <div class="nav--prev">
@@ -62,46 +62,46 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                     </div>
                 </div>
                 <div class="row" data-padding="xs">
-                    <div class="col-12">
-                        <div class="articles-carousel owl-carousel">
+                    {% for blog in blogs %}
+                        <div class="col-md-4 col-sm -12">
+                            {% comment %} <div class="articles-carousel owl-carousel"> {% endcomment %}
                             <!--  Single Article  -->
-                            {% for blog in blogs %}
-                                <article class="rectangle-element--article--wide">
-                                    <div class="info">
-                                        <div class="image">
-                                            <img data-unveil
-                                                 src="#"
-                                                 data-src="{{ blog.featured_image.url }}"
-                                                 data-src-retina="{{ blog.featured_image.url }}"
-                                                 alt=""/>
+                            <article class="rectangle-element--article--wide">
+                                <div class="info">
+                                    <div class="image">
+                                        <img data-unveil
+                                             src="#"
+                                             data-src="{{ blog.featured_image.url }}"
+                                             data-src-retina="{{ blog.featured_image.url }}"
+                                             alt=""/>
+                                    </div>
+                                    <div class="text">
+                                        <div class="meta--image">
+                                            <div class="tags">
+                                            <time class="e-date" datetime="2020-07-05T07:55:21+02:00">{{ blog.created_at }}</time
+                                            >
                                         </div>
-                                        <div class="text">
-                                            <div class="meta--image">
-                                                <div class="tags">
-                                                <time class="e-date" datetime="2020-07-05T07:55:21+02:00">{{ blog.created_at }}</time
-                                                >
-                                            </div>
-                                        </div>
-                                        <h3>{{ blog.title }}</h3>
-                                        <p>
-                                            {{ blog.description | safe | truncatewords:40 }}
-                                        </p>
-                                    <a href="post.html" class="simple--underline">Read more..</a
-                                    >
-                                </div>
-                                {% comment %} </div> {% endcomment %}
+                                    </div>
+                                    <h3>{{ blog.title }}</h3>
+                                    <p>
+                                        {{ blog.description | safe | truncatewords:40 }}
+                                    </p>
+                                <a href="post.html" class="simple--underline">Read more..</a
+                                >
                             </div>
-                            <a href="{% url 'blog-detail' blog.slug %}" class="link"></a>
-                        </article>
-                    {% endfor %}
+                            {% comment %} </div> {% endcomment %}
+                        </div>
+                        <a href="{% url 'blog-detail' blog.slug %}" class="link"></a>
+                    </article>
                     <!--  END Single Article  -->
+                    {% comment %} </div> {% endcomment %}
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -160,15 +160,14 @@
                                 <a href="post.html" class="simple--underline">Read more..</a
                                 >
                             </div>
-                        </div>
-                        <a href="{% url 'blog-detail' featuredblogs.slug %}" class="link"></a>
-                    </article>
-                    <!--  END Single Article  -->
-                {% endfor %}
+                            <a href="{% url 'blog-detail' featuredblogs.slug %}" class="link"></a>
+                        </article>
+                        <!--  END Single Article  -->
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 </div>
 {% endblock %}

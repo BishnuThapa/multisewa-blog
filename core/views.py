@@ -6,7 +6,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 def index(request):
     featured = Blog.objects.latest('id')
-    blogs = Blog.objects.all().order_by('-id')[:6]
+    blogs = Blog.objects.all().order_by('-id')[:3]
     featured_blogs = Blog.objects.filter(is_featured=True).order_by('-id')
 
     context = {
